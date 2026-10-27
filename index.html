@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio – 최수진 Choi Su Jin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap">
+<style>
+/* Paperlogy: 설치돼 있으면 local() 사용. 웹에 올릴 땐 아래 url()에 폰트 파일 경로를 넣으세요 */
+@font-face{font-family:'Paperlogy';font-weight:300;src:local('Paperlogy 3 Light'),local('Paperlogy-3Light')}
+@font-face{font-family:'Paperlogy';font-weight:500;src:local('Paperlogy 5 Medium'),local('Paperlogy-5Medium')}
+@font-face{font-family:'Paperlogy';font-weight:700;src:local('Paperlogy 7 Bold'),local('Paperlogy-7Bold')}
+@font-face{font-family:'Paperlogy';font-weight:800;src:local('Paperlogy 8 ExtraBold'),local('Paperlogy-8ExtraBold')}
+:root{--ink:#111;--paper:#f1f1ef;--g1:#2a2a2a;--g2:#777;--g3:#c9c9c6;--g4:#e2e2df;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ink);color:var(--paper);font-family:'Paperlogy','Noto Sans KR',sans-serif;font-weight:500;line-height:1.7}
+section{min-height:100vh;padding:96px 6vw 80px;position:relative}
+.dark{background:var(--ink);color:var(--paper)}.light{background:var(--paper);color:var(--ink)}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:9;display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;mix-blend-mode:difference;color:#fff;font-size:13px;font-weight:700}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}nav a{color:inherit;text-decoration:none}
+.tag{border:1px solid currentColor;border-radius:99px;padding:4px 16px;font-size:12px;font-weight:500;opacity:.8;display:inline-block}
+.star{width:var(--s,56px);height:var(--s,56px);animation:spin 14s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.label{font-size:20px;font-weight:700;display:flex;align-items:flex-start;gap:6px}
+h1{font-size:clamp(64px,13vw,190px);font-weight:800;line-height:1;letter-spacing:-.04em}
+h2{font-size:clamp(28px,4vw,52px);font-weight:700;letter-spacing:-.02em;line-height:1.25}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.foot{position:absolute;left:6vw;right:6vw;bottom:28px;display:flex;justify-content:space-between;font-size:12px;font-weight:700;opacity:.75}
+/* cover */
+#cover h1{margin-top:12vh;display:flex;align-items:flex-start;gap:8px}
+#cover .sub{font-size:22px;font-weight:700;margin-top:20px}
+#cover p{font-weight:700;font-size:22px;line-height:1.6;color:var(--paper);max-width:760px;margin-top:14px}
+.shapes{position:absolute;right:6vw;bottom:90px;display:flex;gap:20px;align-items:flex-end}
+.shapes>*{background:var(--g1)}
+.s1{width:90px;height:100px;clip-path:polygon(0 0,45% 0,45% 38%,100% 38%,100% 100%,0 100%)}
+.s2{width:84px;height:84px;background:none!important;display:grid;grid-template-columns:1fr 1fr}
+.s2 i{background:var(--g2);border-radius:50%;margin:1px}
+.s3{width:100px;height:100px;background:var(--paper)!important;clip-path:polygon(0 0,100% 0,100% 20%,60% 50%,100% 80%,100% 100%,0 100%,0 80%,40% 50%,0 20%)}
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:5vw;margin-top:60px;align-items:center}
+.intro .name{font-size:clamp(44px,6vw,80px);font-weight:800;line-height:1.1}
+.intro .en{color:var(--g2);font-weight:300;font-size:20px;margin:6px 0 24px}
+.intro p{font-weight:300;font-size:15px;color:var(--g3);max-width:520px;margin-bottom:14px}
+.ph{background:repeating-linear-gradient(45deg,var(--g4),var(--g4) 10px,#d8d8d5 10px,#d8d8d5 20px);color:var(--g2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;text-align:center;min-height:220px;border-radius:4px}
+.dark .ph{background:repeating-linear-gradient(45deg,#1d1d1d,#1d1d1d 10px,#232323 10px,#232323 20px);color:#666}
+.sig{font-family:'Brush Script MT','Segoe Script',cursive;font-style:italic;font-size:44px;color:var(--paper);margin-top:18px;opacity:.9}
+/* contents */
+.toc{margin-top:50px;border-top:1px solid var(--g3)}
+.toc a{display:grid;grid-template-columns:90px 1fr auto;align-items:center;padding:28px 0;border-bottom:1px solid var(--g3);color:inherit;text-decoration:none;transition:padding .25s,background .25s}
+.toc a:hover{padding-left:18px;background:var(--g4)}
+.toc b{font-size:14px;color:var(--g2)}.toc span{font-size:clamp(24px,3.4vw,44px);font-weight:700}.toc em{font-style:normal;font-size:13px;color:var(--g2)}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px}
+.tl div{border-top:1px solid var(--ink);padding:20px 20px 0 0;position:relative}
+.tl div:before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--ink)}
+.tl h3{font-size:22px;font-weight:700;margin-top:10px}.tl p{font-size:13px;color:var(--g2);font-weight:500}
+/* tabs & cards */
+.tabs{display:flex;gap:10px;margin:36px 0;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:14px;font-weight:700;padding:9px 22px;border-radius:99px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.pane{display:none}.pane.on{display:block}
+.pane>p.lead{max-width:620px;color:var(--g1);font-weight:500;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card .ph{aspect-ratio:3/4;min-height:0}.card.w .ph{aspect-ratio:16/9}
+.card h4{font-size:17px;font-weight:700;margin-top:12px}.card p{font-size:13px;color:var(--g2)}
+.bar{display:flex;align-items:center;gap:10px;font-size:12px;margin-top:8px;font-weight:700}
+.bar i{flex:1;height:6px;border-radius:9px;background:var(--g3);overflow:hidden;position:relative}
+.bar i:after{content:"";position:absolute;inset:0;width:var(--v);background:var(--ink)}
+.work{display:grid;grid-template-columns:1fr 1.1fr;gap:5vw;margin-top:40px;align-items:start}
+.work ul{list-style:none;padding:0;border-top:1px solid var(--g3)}
+.work li{padding:13px 0;border-bottom:1px solid var(--g3);font-size:14px;display:flex;gap:14px}
+.work li b{min-width:64px;color:var(--g2);font-weight:700}
+.work>div>p{font-size:14px;color:var(--g1);margin:20px 0}
+#contact{display:flex;flex-direction:column;justify-content:center}
+#contact a{color:var(--paper);font-size:clamp(22px,4vw,48px);font-weight:700;text-decoration:none;border-bottom:2px solid var(--paper);align-self:flex-start;margin-top:30px}
+@media(max-width:760px){nav ul{display:none}.intro,.work{grid-template-columns:1fr}.tl,.grid{grid-template-columns:1fr 1fr}.shapes{transform:scale(.6);transform-origin:right bottom}.toc a{grid-template-columns:50px 1fr}.toc em{display:none}}
+.ph{position:relative}.ph.has{background:none!important;padding:0;overflow:hidden;align-items:stretch}.ph.has img{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:cover;object-position:top;display:block}.ph .x{display:none}
+body.ed .ph.has .x{display:flex;position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:#111;color:#fff;align-items:center;justify-content:center;font-size:16px;cursor:pointer;z-index:2}
+body.ed [contenteditable=true]{outline:1px dashed rgba(130,130,130,.7);outline-offset:3px;cursor:text}
+body.ed [contenteditable=true]:focus{outline:2px solid #888;background:rgba(128,128,128,.15)}
+body.ed .ph{cursor:pointer;outline:2px dashed #888;outline-offset:-6px}
+body.ed .bar i{height:12px;cursor:pointer}
+#tb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:6px;align-items:center;background:#111;color:#f1f1ef;border:1px solid #666;border-radius:99px;padding:6px;font-size:13px;font-weight:700;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:96vw}
+#tb button{font:inherit;font-size:13px;background:#2a2a2a;color:#f1f1ef;border:0;border-radius:99px;padding:9px 16px;cursor:pointer;white-space:nowrap}
+#tb button:hover{background:#444}#tb span{padding:0 10px;color:#aaa;font-weight:500}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:460px}.tool{text-align:center}.tool i{display:flex;aspect-ratio:1;border:1.5px solid #f1f1ef;border-radius:20px;align-items:center;justify-content:center;font-style:normal;font-weight:800;font-size:clamp(22px,3vw,34px);color:#f1f1ef;transition:background .2s,color .2s}.tool:hover i{background:#f1f1ef;color:#111}.tool span{display:block;font-size:12px;color:#c9c9c6;margin-top:8px;font-weight:500}
+body:not(.ed) #detail .ph.has,body:not(.ed) #banner .ph.has{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.95);overflow:auto;padding:64px 3vw 40px;cursor:zoom-out}#lb img{display:block;margin:0 auto;max-width:100%;height:auto}#lb b{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:22px;color:#fff;font-size:34px;line-height:1}
+.ph.has img{object-position:top}
+.intro>div:last-child{justify-self:end;width:100%;max-width:460px}
+.dlead{max-width:760px;margin-top:22px;padding-left:18px;border-left:3px solid var(--ink);font-size:clamp(16px,1.5vw,19px);font-weight:500;line-height:1.8;color:var(--g1)}
+#tb{flex-wrap:wrap;justify-content:center;border-radius:24px}
+#tb select{font:inherit;font-size:13px;background:#2a2a2a;color:#f1f1ef;border:0;border-radius:99px;padding:8px 10px}
+.tbx{position:absolute;z-index:5;min-width:80px;padding:4px 6px;font-size:18px;font-weight:500;line-height:1.6}
+.tbx .tbh,.tbx .tbd,.tbx .tbr{display:none;position:absolute;width:26px;height:26px;border-radius:50%;background:#111;color:#fff;border:1px solid #777;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:13px;touch-action:none;user-select:none;z-index:6}
+.tbx .tbh{top:-13px;left:-13px;cursor:move}.tbx .tbd{top:-13px;right:-13px;cursor:pointer}.tbx .tbr{bottom:-13px;right:-13px;cursor:ew-resize}
+body.ed .tbx{outline:1px dashed #888}
+body.ed .tbx .tbh,body.ed .tbx .tbd,body.ed .tbx .tbr{display:flex}
+@media(max-width:760px){nav{display:none}html,body{overflow-x:hidden}section{padding:60px 14px 80px}.foot{left:14px;right:14px}.grid,.tl{grid-template-columns:1fr}.shapes{right:14px}.work{gap:28px}}
+#detail .ph.has,#banner .ph.has{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#lb,#lb *{cursor:pointer}
+#detail .grid{grid-template-columns:repeat(5,1fr);gap:16px}#detail .card h4{font-size:15px;line-height:1.4}#detail .card p{font-size:12px}
+@media(max-width:760px){#detail .grid{grid-template-columns:1fr}#detail .card h4{font-size:17px}#detail .card p{font-size:13px}}
+#detail .grid{margin-top:44px}
+</style>
+
+</head>
+<body class="">
+<nav><span>PORTFOLIO</span><ul><li><a href="#intro">Intro</a></li><li><a href="#detail">상세페이지</a></li><li><a href="#banner">배너</a></li><li><a href="#goods">굿즈</a></li><li><a href="#cibi">CI/BI</a></li></ul></nav>
+
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="ast" viewBox="0 0 100 100"><g stroke="currentColor" stroke-width="13" stroke-linecap="butt"><path d="M50 4V96"></path><path d="M10 27L90 73"></path><path d="M90 27L10 73"></path></g></symbol></defs></svg>
+
+<section id="cover" class="dark">
+  <div class="top"><span></span><div style="text-align:right"><div style="font-weight:300;font-size:14px;opacity:.8">#Detail Page #Banner #Goods #CI/BI</div><div style="font-weight:700;font-size:14px;margin-top:6px">Designer Choi Su Jin</div></div></div>
+  <h1>Portfolio<svg class="star" style="--s:clamp(36px,6vw,84px)" fill="none"><use href="#ast" style="color:#f1f1ef"></use></svg></h1>
+  <div class="sub">최수진 <span style="font-weight:300">Choi Su Jin</span></div>
+  <p><br><div><br></div></p>
+  <div style="font-weight:700;margin-top:60px"><br></div>
+  <div class="shapes"><div class="s1"></div><div class="s2"><i></i><i></i><i></i><i></i></div><div class="s3"></div></div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>››››</span></div>
+<div class="tbx" style="left: 5.86312%; top: 729px; width: 44%;"><div class="tbt" style="font-size: 14px;">2026. PORTFOLIO</div></div></section>
+
+<section id="intro" class="dark" style="border-top:1px solid #222">
+  <div class="top"><div class="label">Introduction <svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">#Detail Page #Banner #Goods #CI/BI</span></div>
+  <div class="intro">
+    <div>
+      <div class="name" style="font-weight: 500;">최 수 진</div><div class="en">Choi Su Jin</div>
+      <p><br></p>
+      <p>───────────────<div>디자인은 예쁘게 만드는 일을 넘어, 브랜드가 하고 싶은 말을 보는 사람에게 정확히 전달하는 일이라고 생각합니다.브랜드의 특성과 목적에 맞춰 직접 디자인을 진행해왔습니다.</div></p>
+      <p><br></p><div style="font-weight: 300;"><br></div><p></p>
+      <div class="sig"><br></div>
+    </div>
+    <div><div class="en" style="margin:0 0 18px">Tools</div><div class="tools"><div class="tool"><i>Ai</i><span>Illustrator</span></div><div class="tool"><i>Ps</i><span>Photoshop</span></div><div class="tool"><i>Pr</i><span>Premiere Pro</span></div><div class="tool"><i>F</i><span>Figma</span></div><div class="tool"><i><svg width="34" height="34" viewBox="0 0 100 100" fill="none"><use href="#ast"></use></svg></i><span>Claude</span></div><div class="tool"><i>W</i><span>Word</span></div><div class="tool"><i>X</i><span>Excel</span></div><div class="tool"><i>P</i><span>PowerPoint</span></div><div class="tool"><i>한</i><span>한글</span></div></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="contents" class="light">
+  <div class="top"><div class="label">Contents <svg class="star" style="--s:26px"><use href="#ast" style="color:#111"></use></svg></div><span class="tag">Index</span></div>
+  <h2 style="margin-top:40px">네 가지 영역의<br>디자인 작업을 소개합니다.</h2>
+  <div class="toc">
+    <a href="#detail"><b>01</b><span>상세페이지</span><em>기업 프로젝트 · 클라이언트 프로젝트</em></a>
+    <a href="#banner"><b>02</b><span>배너</span><em>스마트스토어 프로모션 · SNS 배너</em></a>
+    <a href="#goods"><b>03</b><span>굿즈 제작</span><em>Goods &amp; Packaging</em></a>
+    <a href="#cibi"><b>04</b><span>CI / BI 디자인</span><em>Brand Identity</em></a>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="detail" class="light" style="border-top:1px solid var(--g3)">
+  <div class="top"><div class="label">01 Detail Page <svg class="star" style="--s:26px"><use href="#ast" style="color:#111"></use></svg></div><span class="tag">상세페이지</span></div>
+  <h2 style="margin-top:40px">설득의 흐름을 설계하는<div>상세페이지<br></div></h2>
+  <div class="pane on" id="a">
+    <div class="grid">
+      <div class="card"><div class="ph has"><img alt="" src="images/i17927137897349784.jpg"></div><h4>논산 딸기 상세페이지 디자인</h4><p>기획 · 이미지 보정 · 레이아웃 · 디자인</p><div class="bar">기여도<i style="--v: 60%;"></i>60%</div></div>
+      <div class="card"><div class="ph has"><img alt="" src="images/i17927159475536966.png"></div><h4>닭갈비 제품 상세페이지 디자인</h4><p>기획 · 조리 및 세팅 · 촬영 및 보정 · 레이아웃 · 디자인</p><div class="bar">기여도<i style="--v: 100%;"></i>100%</div></div>
+      <div class="card"><div class="ph has"><img alt="" src="images/i1792728722877730.jpg"></div><h4>무안 양파 상세페이지 디자인</h4><p>기획&nbsp; · ai 활용한 이미지 생성 · 레이아웃 · 디자인</p><div class="bar">기여도<i style="--v: 100%;"></i>100%</div></div>
+      <div class="card"><div class="ph has"><img alt="" src="images/i17926355427597747.jpg"></div><h4>앰플 상세페이지</h4><p>기획 · ai 활용한 이미지 구현 ·&nbsp; 레이아웃 · 디자인</p><div class="bar">기여도<i style="--v: 100%;"></i>100%</div></div>
+      <div class="card"><div class="ph has"><img alt="" src="images/i17930014759701053.jpg"></div><h4>머그컵 제품 상세페이지</h4><p>기획 · ai 활용한 이미지 구현 ·  레이아웃 · 디자인</p><div class="bar">기여도<i style="--v: 100%;"></i>100%</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="banner" class="dark">
+  <div class="top"><div class="label">02 Banner <svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">배너</span></div>
+  <h2 style="margin-top:40px">의미를 담고,<div>가치를 디자인하다.</div></h2>
+  <div class="grid" style="margin-top:44px;grid-template-columns:1fr 1fr">
+    <div class="card w"><div class="ph has"><img alt="" src="images/i17930060349086186.jpg"></div><h4 style="color:#f1f1ef">스마트스토어 프로모션 배너</h4><p><br></p></div>
+    <div class="card w"><div class="ph has"><img alt="" src="images/i17930569542277651.jpg"></div><h4 style="color:#f1f1ef">SNS 공지&amp;이벤트 배너</h4><p><br></p></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="goods" class="light">
+  <div class="top"><div class="label">03 Goods <svg class="star" style="--s:26px"><use href="#ast" style="color:#111"></use></svg></div><span class="tag">굿즈 제작</span></div>
+  <div class="work">
+    <div>
+      <h2>손에 닿는 브랜드,<br>굿즈 제작</h2>
+      <p>인스타툰 콘텐츠를 바탕으로 굿즈를 기획하고, 디자인부터 인쇄 도안 작업 및 스마트스토어 오픈 과정을 진행했습니다.</p><div><br></div><p></p>
+      <ul><li><b>품목</b>스티커 · 엽서 · 키링 · 떡메모지 · 장패드 · 그립톡</li><li><b>범위</b>기획 · 인스타툰 운영 · 인쇄 도안 작업 · 스마트스토어 운영&nbsp;</li><li><b>툴</b>Illustrator · Photoshop</li></ul>
+      
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr"><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927310811477177.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927311823725844.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927311444399135.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927311207169706.jpg"></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="cibi" class="dark">
+  <div class="top"><div class="label">04 CI / BI&nbsp; 01<svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">CI/BI 디자인</span></div>
+  <div class="work">
+    <div>
+      <h2>브랜드의 얼굴을 만드는<br>CI / BI 디자인</h2>
+      <p style="color:#c9c9c6;font-weight:300">베이커리 카페</p>
+      <ul style="border-color:#333"><li style="border-color:#333"><b>프로젝트</b>GGUURI</li><li style="border-color:#333"><b>기간</b>2026.01 - 2026.02</li><li style="border-color:#333"><b>범위</b>로고 · 가이드라인 · 목업이미지</li></ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr"><div class="ph has" style="grid-column:span 2;aspect-ratio:16/9"><img alt="" src="images/i17927299120954726.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927298153464714.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927290127393246.jpg"></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="cibi2" style="border-top:1px solid #222" class="dark">
+  <div class="top"><div class="label">04 CI / BI&nbsp; 02 <svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">CI/BI 디자인</span></div>
+  <div class="work">
+    <div>
+      <h2>브랜드의 얼굴을 만드는<br>CI / BI 디자인</h2>
+      <p style="color:#c9c9c6;font-weight:300">프랜차이즈 피자 브랜드(2027년 론칭)</p>
+      <ul style="border-color:#333"><li style="border-color: rgb(51, 51, 51); font-weight: 500; font-size: 14px;"><b>프로젝트</b>소울본피자 SOULBONE_PIZZA</li><li style="border-color:#333"><b>기간</b>2025.11 – 2025.12</li><li style="border-color:#333"><b>범위</b>로고 · 가이드라인 · 목업이미지 · 무드보드</li></ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr"><div class="ph has" style="grid-column:span 2;aspect-ratio:16/9"><img alt="" src="images/i17927293996897241.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927293676438218.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927293693615647.jpg"></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="cibi3" style="border-top:1px solid #222" class="dark">
+  <div class="top"><div class="label">04 CI / BI&nbsp; 03 <svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">CI/BI 디자인</span></div>
+  <div class="work">
+    <div>
+      <h2>브랜드의 얼굴을 만드는<br>CI / BI 디자인</h2>
+      <p style="color:#c9c9c6;font-weight:300">공동법률사무소</p>
+      <ul style="border-color:#333"><li style="border-color:#333"><b>프로젝트</b>KY파트너스</li><li style="border-color:#333"><b>기간</b>2026.08 - 2026.09</li><li style="border-color:#333"><b>범위</b>로고 · 가이드라인 · 명함디자인 · 목업이미지</li></ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr"><div class="ph has" style="grid-column:span 2;aspect-ratio:16/9"><img alt="" src="images/i17927301974013922.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927301498892482.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927301725829998.jpg"></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="cibi4" style="border-top:1px solid #222" class="dark">
+  <div class="top"><div class="label">04 CI / BI&nbsp; 04 <svg class="star" style="--s:26px"><use href="#ast" style="color:#f1f1ef"></use></svg></div><span class="tag">CI/BI 디자인</span></div>
+  <div class="work">
+    <div>
+      <h2>브랜드의 얼굴을 만드는<br>CI / BI 디자인</h2>
+      <p style="color:#c9c9c6;font-weight:300">카이센동 전문 브랜드</p>
+      <ul style="border-color:#333"><li style="border-color:#333"><b>프로젝트</b>도손카이센</li><li style="border-color:#333"><b>기간</b>2026.08 – 2026.09</li><li style="border-color:#333"><b>범위</b>로고 · 가이드라인 · 목업이미지</li></ul>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr"><div class="ph has" style="grid-column:span 2;aspect-ratio:16/9"><img alt="" src="images/i17927305692361961.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i17927305871956083.jpg"></div><div class="ph has" style="aspect-ratio:1"><img alt="" src="images/i1792730542338455.jpg"></div></div>
+  </div>
+  <div class="foot"><span>✉ qulii_02@naver.com</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<section id="contact" class="dark" style="border-top:1px solid #222;min-height:70vh">
+  <svg class="star" style="--s:90px"><use href="#ast" style="color:#f1f1ef"></use></svg>
+  <h1 style="font-size:clamp(48px,9vw,130px);margin-top:20px">Thank you</h1>
+  <a href="mailto:qulii_02@naver.com">qulii_02@naver.com</a>
+  <div class="foot"><span>Portfolio 2026</span><span>Designer Choi Su Jin</span></div>
+</section>
+
+<script>
+document.querySelectorAll('#tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('#tabs button').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.pane').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');
+  });
+});
+</script>
+
+
+
+<script>(function viewer(){var body=document.body;document.addEventListener('click',function(e){var zi=e.target.closest('#detail .ph.has img,#banner .ph.has img');if(!zi)return;var o=document.createElement('div');o.id='lb';o.innerHTML='<b>×</b><img alt="" src="'+zi.src+'">';function k(ev){if(ev.key==='Escape')cl()}function cl(){o.remove();document.removeEventListener('keydown',k)}o.onclick=cl;document.addEventListener('keydown',k);body.appendChild(o)})})();</script></body></html>
